@@ -37,4 +37,19 @@
   }
 }
 
+.card {
+  position: absolute;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
 
