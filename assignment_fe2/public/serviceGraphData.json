@@ -1,0 +1,200 @@
+[
+  {
+    "name": "Service A",
+    "port": 8080,
+    "namespace": "default",
+    "cluster": "cluster1",
+    "invocations": 120,
+    "errors": 5,
+    "type": "HTTP",
+    "edges": [
+      { "target": "Service B", "invocations": 60, "latency": 80 },
+      { "target": "Service C", "invocations": 30, "latency": 120 }
+    ]
+  },
+  {
+    "name": "Service B",
+    "port": 8081,
+    "namespace": "default",
+    "cluster": "cluster1",
+    "invocations": 100,
+    "errors": 10,
+    "type": "gRPC",
+    "edges": [
+      { "target": "Service C", "invocations": 40, "latency": 100 },
+      { "target": "Service D", "invocations": 30, "latency": 90 }
+    ]
+  },
+  {
+    "name": "Service C",
+    "port": 8082,
+    "namespace": "default",
+    "cluster": "cluster1",
+    "invocations": 90,
+    "errors": 8,
+    "type": "HTTP",
+    "edges": [
+      { "target": "Service D", "invocations": 50, "latency": 110 },
+      { "target": "Service E", "invocations": 20, "latency": 130 }
+    ]
+  },
+  {
+    "name": "Service D",
+    "port": 8083,
+    "namespace": "default",
+    "cluster": "cluster2",
+    "invocations": 80,
+    "errors": 4,
+    "type": "MySQL",
+    "edges": [
+      { "target": "Service E", "invocations": 60, "latency": 70 },
+      { "target": "Service F", "invocations": 20, "latency": 50 }
+    ]
+  },
+  {
+    "name": "Service E",
+    "port": 8084,
+    "namespace": "default",
+    "cluster": "cluster2",
+    "invocations": 70,
+    "errors": 3,
+    "type": "Redis",
+    "edges": [
+      { "target": "Service F", "invocations": 40, "latency": 60 },
+      { "target": "Service G", "invocations": 20, "latency": 80 }
+    ]
+  },
+  {
+    "name": "Service F",
+    "port": 8085,
+    "namespace": "default",
+    "cluster": "cluster2",
+    "invocations": 60,
+    "errors": 2,
+    "type": "HTTP",
+    "edges": [
+      { "target": "Service G", "invocations": 30, "latency": 90 },
+      { "target": "Service H", "invocations": 10, "latency": 100 }
+    ]
+  },
+  {
+    "name": "Service G",
+    "port": 8086,
+    "namespace": "default",
+    "cluster": "cluster3",
+    "invocations": 50,
+    "errors": 1,
+    "type": "gRPC",
+    "edges": [
+      { "target": "Service H", "invocations": 20, "latency": 120 },
+      { "target": "Service I", "invocations": 15, "latency": 110 }
+    ]
+  },
+  {
+    "name": "Service H",
+    "port": 8087,
+    "namespace": "default",
+    "cluster": "cluster3",
+    "invocations": 40,
+    "errors": 0,
+    "type": "MySQL",
+    "edges": [
+      { "target": "Service I", "invocations": 20, "latency": 130 },
+      { "target": "Service J", "invocations": 10, "latency": 140 }
+    ]
+  },
+  {
+    "name": "Service I",
+    "port": 8088,
+    "namespace": "default",
+    "cluster": "cluster3",
+    "invocations": 30,
+    "errors": 2,
+    "type": "Redis",
+    "edges": [
+      { "target": "Service J", "invocations": 20, "latency": 100 },
+      { "target": "Service K", "invocations": 10, "latency": 120 }
+    ]
+  },
+  {
+    "name": "Service J",
+    "port": 8089,
+    "namespace": "default",
+    "cluster": "cluster4",
+    "invocations": 20,
+    "errors": 5,
+    "type": "HTTP",
+    "edges": [
+      { "target": "Service K", "invocations": 10, "latency": 90 },
+      { "target": "Service L", "invocations": 5, "latency": 110 }
+    ]
+  },
+  {
+    "name": "Service K",
+    "port": 8090,
+    "namespace": "default",
+    "cluster": "cluster4",
+    "invocations": 15,
+    "errors": 6,
+    "type": "gRPC",
+    "edges": [
+      { "target": "Service L", "invocations": 5, "latency": 100 }
+    ]
+  },
+  {
+    "name": "Service L",
+    "port": 8091,
+    "namespace": "default",
+    "cluster": "cluster4",
+    "invocations": 10,
+    "errors": 1,
+    "type": "MySQL",
+    "edges": []
+  },
+  {
+    "name": "Service M",
+    "port": 8092,
+    "namespace": "default",
+    "cluster": "cluster5",
+    "invocations": 90,
+    "errors": 7,
+    "type": "Redis",
+    "edges": [
+      { "target": "Service N", "invocations": 60, "latency": 80 }
+    ]
+  },
+  {
+    "name": "Service N",
+    "port": 8093,
+    "namespace": "default",
+    "cluster": "cluster5",
+    "invocations": 70,
+    "errors": 4,
+    "type": "HTTP",
+    "edges": [
+      { "target": "Service O", "invocations": 50, "latency": 70 }
+    ]
+  },
+  {
+    "name": "Service O",
+    "port": 8094,
+    "namespace": "default",
+    "cluster": "cluster6",
+    "invocations": 60,
+    "errors": 2,
+    "type": "gRPC",
+    "edges": [
+      { "target": "Service P", "invocations": 30, "latency": 60 }
+    ]
+  },
+  {
+    "name": "Service P",
+    "port": 8095,
+    "namespace": "default",
+    "cluster": "cluster6",
+    "invocations": 50,
+    "errors": 3,
+    "type": "MySQL",
+    "edges": []
+  }
+]
